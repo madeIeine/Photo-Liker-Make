@@ -1,0 +1,31 @@
+// Create and assign values to your variables
+
+// Add your event handlers
+var likes = 0;
+var comments = "OMG soooo cute!";
+
+// The following onEvent code below makes the upButton 
+// increase the amount of likes the user recieves by 1.
+onEvent("upButton", "click", function( ) {
+  likes = likes + 1;
+  setText("likeCounterOutput", "Likes: " + likes);
+});
+
+
+// The following onEvent code below makes the downButton decrease 
+//the amount of likes the user recieves by 1.
+onEvent("downButton", "click", function( ) {
+  likes = likes - 1;
+  setText("likeCounterOutput", "Likes: " + likes);
+});
+
+// The following onEvent code below makes the commentButton work in the sense 
+// that when it is clicked, it takes the comment the user inputs and outputs it
+// to display (the inputted comment) with the rest of the comments the user 
+// has created (in the large box on the left).
+onEvent("commentButton", "click", function( ) {
+  var newComment = getText("newCommentInput");
+  comments = comments + "\n" + newComment;
+  setText("allCommentsOutput", comments);
+  setText("newCommentInput", "");
+});
